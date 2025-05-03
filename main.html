@@ -77,4 +77,39 @@
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="conditions-checkbox" required>
-        <label class="form-check-la
+        <label class="form-check-label" for="conditions-checkbox">
+          I agree to the terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+
+  </form>
+</div>
+
+<!-- Bootstrap Validation Script -->
+<script>
+  (function () {
+    'use strict';
+    var forms = document.querySelectorAll('.needs-validation');
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>
+
+</body>
+</html>
